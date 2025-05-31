@@ -1,0 +1,33 @@
+/* Prevent horizontal scrolling caused by overflow */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+/* Ensure no negative margins or excessive positioning break the layout */
+.container,
+.container-fluid {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+/* Remove bootstrap's negative margins for .row which can cause overflow */
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+/* For nested rows inside columns */
+[class*="col-"] > .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+/* Optional: Ensure images and other content don't overflow */
+img,
+.img-fluid,
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
