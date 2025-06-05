@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("oSnHLddSE2O0wn5CX"); // ✅ Your public key
+  emailjs.init("o2uwMyK_X4ztFw95L"); // ✅ Your public key
 })();
 
 // Set timestamp before sending
@@ -12,7 +12,7 @@ document
     document.getElementById("timestamp").value = new Date().toLocaleString();
 
     emailjs
-      .sendForm("service_2pxf4u7", "template_aijrvla", this)
+      .sendForm("service_j1zsr3a", "template_gd0zth7", this)
       .then(function () {
         alert("✅ Message sent successfully!");
       })

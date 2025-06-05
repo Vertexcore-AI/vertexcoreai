@@ -1,372 +1,733 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <!--====== Required meta tags ======-->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="description"
-        content="VertexCore AI - Innovative tech solutions for web development, AI, and embedded systems" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!--====== Title ======-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VertexCore AI - Innovative Tech Solutions</title>
-
-    <!--====== Bootstrap CSS ======-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!--====== Font Awesome ======-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!--====== Google Fonts ======-->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
-        rel="stylesheet">
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="design.css">
+  <body class="gradient-bg text-white">
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+      <div class="shape w-20 h-20 border-2 border-blue-400 rounded-lg"></div>
+      <div
+        class="shape w-16 h-16 border-2 border-purple-400 rounded-full"
+      ></div>
+      <div
+        class="shape w-24 h-24 border-2 border-cyan-400 rounded-lg transform rotate-45"
+      ></div>
+      <div
+        class="shape w-18 h-18 border-2 border-indigo-400 rounded-full"
+      ></div>
+    </div>
 
-</head>
-
-<body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">VertexCore AI</a>
+    <nav class="nav-glass fixed w-full z-50 transition-all duration-300">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-2xl font-bold gradient-text">VertexCore AI</div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="hover:text-blue-400 transition-colors"
+              >Home</a
+            >
+            <a href="#services" class="hover:text-blue-400 transition-colors"
+              >Services</a
+            >
+            <a href="#about" class="hover:text-blue-400 transition-colors"
+              >About</a
+            >
+            <a href="#contact" class="hover:text-blue-400 transition-colors"
+              >Contact</a
+            >
+          </div>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-4">
+          <a href="#home" class="block hover:text-blue-400 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="block hover:text-blue-400 transition-colors"
+            >Services</a
+          >
+          <a href="#about" class="block hover:text-blue-400 transition-colors"
+            >About</a
+          >
+          <a href="#contact" class="block hover:text-blue-400 transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="hero-title">We build smart digital experiences</h1>
-                        <p class="hero-subtitle">
-                            From custom websites and powerful web applications to cutting-edge AI solutions and
-                            embedded systems, we turn your ideas into real-world technology.
-                        </p>
-                        <ul class="features-list mb-4">
-                            <li>Custom e-commerce systems with full payment integration</li>
-                            <li>Electronic document management systems (EDMS)</li>
-                            <li>Store management systems for inventory & sales tracking</li>
-                            <li>Scalable web platforms tailored to your business needs</li>
-                            <li>Digital Marketing</li>
-                        </ul>
+    <section
+      id="home"
+      class="min-h-screen flex items-center section-padding relative z-10"
+    >
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="slide-in-left">
+            <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              Empowering<span class="gradient-text"> Small Businesses</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              At VertexCore AI, we build powerful, user-friendly software that
+              helps small businesses grow, run efficiently, and stay ahead of
+              the curve. Whether you're running a shop, managing a hotel, or
+              leading an educational institute, we design technology that works
+              for you—today and tomorrow.
+            </p>
 
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="#contact" class="btn btn-primary">Get Started <i
-                                    class="fas fa-arrow-right ms-2"></i></a>
-                            <a href="#about" class="btn btn-outline-light">Learn More <i
-                                    class="fas fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <img src="images/newlogo.jpg" alt="VertexCore AI Logo" class="img-fluid">
-                    </div>
-                </div>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-center text-gray-300">
+                <i class="fas fa-check-circle text-blue-400 mr-3"></i>
+                Smart tools. Seamless operations. Future-ready businesses.
+              </div>
             </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <!-- <a href="#contact"
+                            class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-lift glow-effect text-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a> -->
+              <a
+                href="#about"
+                class="border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-lift text-center"
+              >
+                Learn More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="slide-in-right text-center">
+            <div class="relative">
+              <div
+                class="w-96 h-96 mx-auto bg-white rounded-full flex items-center justify-center p-8"
+              >
+                <img
+                  src="images/newlogo.png"
+                  alt="VertexCore AI Logo"
+                  class="w-full h-full object-contain rounded-full"
+                />
+              </div>
+              <div
+                class="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500 rounded-full opacity-50 pulse-animation"
+              ></div>
+              <div
+                class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500 rounded-full opacity-30 pulse-animation"
+                style="animation-delay: 1s"
+              ></div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Technologies Section -->
-    <section class="tech-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="mb-5">Empowering Our Solutions With Cutting-Edge Development Technologies</h2>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-bootstrap"></i>
-                                </div>
-                                <h6>Bootstrap</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-laravel"></i>
-                                </div>
-                                <h6>Laravel</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <h6>CodeIgniter</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-java"></i>
-                                </div>
-                                <h6>Java</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-react"></i>
-                                </div>
-                                <h6>ReactJS</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-php"></i>
-                                </div>
-                                <h6>PHP</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fas fa-stream"></i>
-                                </div>
-                                <h6>Livewire</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fab fa-vuejs"></i>
-                                </div>
-                                <h6>VueJS</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-6 mb-4">
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                                <h6>Filament</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <section class="section-padding relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+            Empowering Solutions With
+            <span class="gradient-text">Cutting-Edge</span> Technologies
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            We leverage the latest development technologies to build robust,
+            scalable, and innovative solutions.
+          </p>
         </div>
+
+        <div class="tech-grid">
+          <div class="tech-item">
+            <i class="fab fa-laravel text-4xl tech-icon mb-4 text-red-400"></i>
+            <h6 class="font-semibold">Laravel</h6>
+          </div>
+
+          <div class="tech-item">
+            <img
+              src="images/Flask.png"
+              alt="Flask"
+              class="w-12 h-12 mb-4 mx-auto"
+            />
+            <h6 class="font-semibold">Flask</h6>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-react text-4xl tech-icon mb-4 text-cyan-400"></i>
+            <h6 class="font-semibold">ReactJS</h6>
+          </div>
+
+          <div class="tech-item">
+            <img
+              src="images/Livewire.png"
+              alt="Livewire"
+              class="w-12 h-12 mb-4 mx-auto"
+            />
+            <h6 class="font-semibold">Livewire</h6>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-vuejs text-4xl tech-icon mb-4 text-green-400"></i>
+            <h6 class="font-semibold">VueJS</h6>
+          </div>
+          <div class="tech-item">
+            <img
+              src="images/FilamentPHP.png"
+              alt="Filament"
+              class="w-11 h-11 mb-4 mx-auto"
+            />
+            <h6 class="font-semibold">FilamentPHP</h6>
+          </div>
+          <div class="tech-item">
+            <i class="fab fa-css3 text-4xl tech-icon mb-4 text-blue-500"></i>
+            <h6 class="font-semibold">Tailwind CSS</h6>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Solutions Section -->
-    <section class="solutions-section" id="services">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-5">
-                <div class="col-lg-8">
-                    <h2 class="mb-3">Built With Purpose. Designed for Growth.</h2>
-                    <p class="text-muted">Our software is crafted using the latest technologies and tailored to meet
-                        your evolving business needs.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="solution-card text-center">
-                        <div class="solution-icon bg-primary mx-auto">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h5 class="mb-3">High Performance</h5>
-                        <p class="text-muted">Optimized for speed and reliability to ensure smooth and efficient
-                            business operations.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="solution-card text-center">
-                        <div class="solution-icon bg-success mx-auto">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h5 class="mb-3">Clean Code</h5>
-                        <p class="text-muted">Structured, maintainable, and scalable code that adapts with your business
-                            growth.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="solution-card text-center">
-                        <div class="solution-icon bg-warning mx-auto">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                        </div>
-                        <h5 class="mb-3">Scalable Architecture</h5>
-                        <p class="text-muted">Designed to handle increasing demands, from startups to large enterprises.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="solution-card text-center">
-                        <div class="solution-icon bg-info mx-auto">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h5 class="mb-3">Seamless Integration</h5>
-                        <p class="text-muted">Works harmoniously with your existing tools and systems for a unified
-                            workflow.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="services" class="section-padding relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+            Built With <span class="gradient-text">Purpose</span>. Designed for
+            <span class="gradient-text">Growth</span>.
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Our software is crafted using the latest technologies and tailored
+            to meet your evolving business needs.
+          </p>
         </div>
+
+        <div class="services-grid">
+          <!-- Service Item 1 -->
+
+          <!-- Service Item 5 (New) -->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #ef4444,
+                    #dc2626
+                  );
+                "
+              >
+                <i class="fas fa-cash-register text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">
+                Point of Sale (POS) Systems
+              </h5>
+              <p class="text-gray-300">
+                Easy-to-use, fast, and reliable POS software that simplifies
+                billing, inventory tracking, and reporting—tailored to your
+                business type.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Item 6 (New) -->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #a855f7,
+                    #9333ea
+                  );
+                "
+              >
+                <i class="fas fa-store text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">Store Management Systems</h5>
+              <p class="text-gray-300">
+                Stay in control of your inventory, suppliers, orders, and
+                analytics. Get everything you need to run your shop in one smart
+                dashboard.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Item 7 (New) -->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #6366f1,
+                    #4f46e5
+                  );
+                "
+              >
+                <i class="fas fa-hotel text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">Hotel Management Systems</h5>
+              <p class="text-gray-300">
+                Manage reservations, housekeeping, check-ins, billing, and more.
+                A full-featured platform for hotels, guesthouses, and homestays.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Item 8 (New)-->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #ec4899,
+                    #db2777
+                  );
+                "
+              >
+                <i class="fas fa-school text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">
+                Educational Institute Management
+              </h5>
+              <p class="text-gray-300">
+                From student admissions and attendance to exams and parent
+                communication—we automate and simplify your school or institute
+                operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Item 9 (New) -->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #f97316,
+                    #ea580c
+                  );
+                "
+              >
+                <i class="fas fa-tools text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">
+                Custom Software Development
+              </h5>
+              <p class="text-gray-300">
+                Have a unique workflow or idea? We create fully customized
+                software solutions that are designed around your business needs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Item 10 (New) -->
+          <div class="mb-0">
+            <div class="service-card">
+              <div
+                class="icon-container"
+                style="
+                  background: linear-gradient(
+                    to bottom right,
+                    #14b8a6,
+                    #0d9488
+                  );
+                "
+              >
+                <i class="fas fa-robot text-2xl text-white"></i>
+              </div>
+              <h5 class="text-xl font-bold mb-4">
+                AI & Machine Learning for Business
+              </h5>
+              <p class="text-gray-300">
+                Leverage data to predict sales, optimize inventory, understand
+                customer behavior, and more. We help you future-proof your
+                business with AI and ML solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="text-center">
-                        <i class="fas fa-users-cog"
-                            style="font-size: 10rem; color: var(--primary-color); opacity: 0.7;"></i>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="mb-4">Preferred by Innovators & Visionaries</h2>
-                    <p class="mb-4">We deliver robust, scalable, and user-centric solutions tailored to your business
-                        goals. Our team combines deep technical expertise with a passion for innovation, ensuring your
-                        project stands out in a competitive market.</p>
-                    <ul class="features-list mb-4">
-                        <li>Transparent communication</li>
-                        <li>Cutting-edge technology stack</li>
-                        <li>Long-term partnership approach</li>
-                    </ul>
-                </div>
+    <section id="about" class="section-padding relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center">
+            <div class="relative">
+              <i
+                class="fas fa-users-cog text-9xl text-blue-400 opacity-70 pulse-animation"
+              ></i>
+              <div
+                class="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+              >
+                <div
+                  class="w-32 h-32 border-4 border-purple-400 rounded-full opacity-30 pulse-animation"
+                  style="animation-delay: 0.5s"
+                ></div>
+              </div>
             </div>
+          </div>
+
+          <div>
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+              A Tech Partner You Can <span class="gradient-text">Count On</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              We believe that every small business deserves access to smart,
+              scalable technology. Born out of a vision to support local
+              entrepreneurs, our startup specializes in creating custom software
+              that solves real-world problems—without breaking your budget.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-center text-gray-300">
+                <i class="fas fa-check-circle text-blue-400 mr-3"></i>
+                Affordable & Scalable
+              </div>
+              <div class="flex items-center text-gray-300">
+                <i class="fas fa-check-circle text-blue-400 mr-3"></i>
+                Easy to Use
+              </div>
+              <div class="flex items-center text-gray-300">
+                <i class="fas fa-check-circle text-blue-400 mr-3"></i>
+                End-to-End Support
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center mb-5">
-                        <h2 class="mb-3">Let's Connect and Build the Future Together</h2>
-                        <p>Ready to transform your ideas into reality? Get in touch with us today.</p>
-                    </div>
-                    <form id="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Email Address"
-                                    required>
-                            </div>
-                        </div>
-                        <input type="text" name="company" class="form-control" placeholder="Company Name">
-                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
-                            required></textarea>
+    <section id="contact" class="section-padding relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+              Let's <span class="gradient-text">Connect</span> and Build the
+              Future Together
+            </h2>
+            <p class="text-xl text-gray-300">
+              Ready to transform your ideas into reality? Get in touch with us
+              today.
+            </p>
+          </div>
 
-                        <!-- Hidden timestamp -->
-                        <input type="hidden" name="time" id="timestamp">
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                Send Message <i class="fas fa-paper-plane ms-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+          <div class="card-glass rounded-2xl p-8">
+            <!-- Success and Error Messages -->
+            <div
+              id="success-message"
+              class="notification success-notification hidden"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2"></i>
+                Thank you for your message! We will get back to you soon.
+              </div>
             </div>
+            <div
+              id="error-message"
+              class="notification error-notification hidden"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-exclamation-circle mr-2"></i>
+                There was an error sending your message. Please try again later.
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/xjkrvdey"
+              method="POST"
+              class="space-y-6"
+            >
+              <input type="hidden" id="timestamp" name="timestamp" />
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email Address"
+                  required
+                />
+              </div>
+
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="form-input"
+                placeholder="Company Name"
+              />
+
+              <textarea
+                id="message"
+                name="message"
+                class="form-input h-32 resize-none"
+                placeholder="Your Message"
+                required
+              ></textarea>
+
+              <div class="text-center">
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-lg font-semibold transition-all duration-300 hover-lift glow-effect"
+                >
+                  Send Email <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+              </div>
+
+              <div
+                id="success-message"
+                class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center"
+              >
+                <i class="fas fa-check-circle mr-2"></i> Your message has been
+                sent successfully! We'll get back to you soon.
+              </div>
+
+              <div
+                id="error-message"
+                class="hidden mt-4 p-3 bg-red-100 text-red-700 rounded-lg text-center"
+              >
+                <i class="fas fa-exclamation-circle mr-2"></i> There was a
+                problem sending your message. Please try again later.
+              </div>
+            </form>
+
+            <!-- JS Script -->
+            <script>
+              const form = document.getElementById("contact-form");
+              const successMessage = document.getElementById("success-message");
+              const errorMessage = document.getElementById("error-message");
+
+              async function handleSubmit(event) {
+                event.preventDefault();
+
+                // Set the timestamp
+                document.getElementById("timestamp").value =
+                  new Date().toLocaleString();
+
+                const data = new FormData(form);
+                fetch(form.action, {
+                  method: form.method,
+                  body: data,
+                  headers: { Accept: "application/json" },
+                })
+                  .then((response) => {
+                    if (response.ok) {
+                      form.reset();
+                      successMessage.classList.remove("hidden");
+                      errorMessage.classList.add("hidden");
+                    } else {
+                      response.json().then((data) => {
+                        errorMessage.classList.remove("hidden");
+                        successMessage.classList.add("hidden");
+                        if (data.errors) {
+                          errorMessage.innerHTML =
+                            `<i class="fas fa-exclamation-circle mr-2"></i>` +
+                            data.errors
+                              .map((error) => error.message)
+                              .join(", ");
+                        }
+                      });
+                    }
+                  })
+                  .catch(() => {
+                    successMessage.classList.add("hidden");
+                    errorMessage.classList.remove("hidden");
+                  });
+              }
+
+              form.addEventListener("submit", handleSubmit);
+            </script>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-8 mb-4">
-                    <h5>Quick Links</h5>
-                    <div class="row">
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#services">Software Solutions</a></li>
-                                <li><a href="#services">Embedded Systems</a></li>
-                                <li><a href="#services">Web Development</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#services">Digital Solutions</a></li>
-                                <li><a href="#services">Digital Marketing</a></li>
-                                <li><a href="#services">AI Solutions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-4 mb-4">
-                    <h5>Get in Touch</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>
-                            <strong>Address:</strong> 7/16 Uplands Road, Kandy
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope me-2" aria-hidden="true"></i>
-                            <strong>Email:</strong>
-                            <a href="mailto:vertexcoreai@gmail.com">vertexcoreai@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone me-2" aria-hidden="true"></i>
-                            <strong>mob 1:</strong>
-                            <a href="tel:0703143692">070 314 3692</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone me-2" aria-hidden="true"></i>
-                            <strong>mob 2:</strong>
-                            <a href="tel:0714791321">071 479 1321</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone me-2" aria-hidden="true"></i>
-                            <strong>mob 3:</strong>
-                            <a href="tel:0778036074">077 803 6074</a>
-                        </li>
-                    </ul>
-
-                    <div class="social-links mt-3">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p>© VertexCore AI 2025. All rights reserved.</p>
-            </div>
+    <footer class="relative z-10 py-12">
+      <div class="container mx-auto px-6">
+        <!-- Footer Logo and Description -->
+        <div class="flex flex-col items-center mb-10">
+          <div class="mb-6">
+            <img
+              src="images/newlogo.png"
+              alt="VertexCore AI Logo"
+              class="h-16 w-16 rounded-full"
+            />
+          </div>
+          <h3 class="text-2xl font-bold mb-3">
+            VertexCore <span class="gradient-text">AI</span>
+          </h3>
+          <p class="text-gray-300 text-center max-w-2xl">
+            Empowering small businesses with innovative tech solutions that
+            drive growth and efficiency.
+          </p>
         </div>
+
+        <!-- Footer Content -->
+        <div class="footer-content card-glass rounded-xl p-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-20">
+            <!-- Quick Links -->
+            <!-- <div>
+                        <h5 class="text-xl font-bold mb-6 gradient-text">Quick Links</h5>
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <div class="space-y-3">
+                                <a href="#services"
+                                    class="block text-gray-300 hover:text-blue-400 transition-colors">Software Solutions</a>
+                                <a href="#services"
+                                    class="block text-gray-300 hover:text-blue-400 transition-colors">Embedded Systems</a>
+                                <a href="#services" class="block text-gray-300 hover:text-blue-400 transition-colors">Web
+                                    Development</a>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="#services"
+                                    class="block text-gray-300 hover:text-blue-400 transition-colors">Digital Solutions</a>
+                                <a href="#services"
+                                    class="block text-gray-300 hover:text-blue-400 transition-colors">Digital Marketing</a>
+                                <a href="#services" class="block text-gray-300 hover:text-blue-400 transition-colors">AI
+                                    Solutions</a>
+                            </div>
+                        </div>
+                    </div> -->
+
+            <!-- Get in Touch -->
+            <div>
+              <h5 class="text-xl font-bold mb-6 gradient-text">Get in Touch</h5>
+              <div class="space-y-3 text-gray-300 mt-4">
+                <div class="flex items-start">
+                  <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                  <div>
+                    <strong>Address:</strong><br />
+                    7/16 Uplands Road, Kandy
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                  <a
+                    href="mailto:vertexcoreai@gmail.com"
+                    class="hover:text-blue-400 transition-colors"
+                    >vertexcoreai@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Numbers -->
+            <div>
+              <h5 class="text-xl font-bold mb-6 gradient-text">
+                Contact Numbers
+              </h5>
+              <div class="space-y-2 text-gray-300 mt-4">
+                <div class="flex items-center">
+                  <i class="fas fa-phone mr-3 text-blue-400"></i>
+                  <a
+                    href="tel:0703143692"
+                    class="hover:text-blue-400 transition-colors"
+                    >070 314 3692</a
+                  >
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-phone mr-3 text-blue-400"></i>
+                  <a
+                    href="tel:077 497 0885"
+                    class="hover:text-blue-400 transition-colors"
+                    >077 497 0885</a
+                  >
+                </div>
+                <div class="flex items-center">
+                  <i class="fas fa-phone mr-3 text-blue-400"></i>
+                  <a
+                    href="tel:0778036074"
+                    class="hover:text-blue-400 transition-colors"
+                    >077 803 6074</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex justify-center space-x-6 mt-10">
+            <a
+              href="https://www.facebook.com/share/1C9sMFE8tm/?mibextid=wwXIfr"
+              target="_blank"
+              class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover-lift"
+            >
+              <i class="fab fa-facebook-f text-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center hover-lift"
+            >
+              <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/vertexcore-ai/"
+              target="_blank"
+              class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover-lift"
+            >
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/vertexcore_ai?igsh=ODdxYmhnbHQwcWdx&utm_source=qr"
+              target="_blank"
+              class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center hover-lift"
+            >
+              <i class="fab fa-instagram text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-gray-300 mt-10">
+          <p>© VertexCore AI 2025. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Custom Script -->
     <script src="scripts.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="mail.js"></script>
-
-</body>
-
+    <!-- <script src="mail.js"></script> -->
+  </body>
 </html>
