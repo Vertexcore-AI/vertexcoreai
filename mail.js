@@ -1,22 +1,19 @@
-(function () {
-  emailjs.init("o2uwMyK_X4ztFw95L"); // ✅ Your public key
-})();
-
-// Set timestamp before sending
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    // Set timestamp value
-    document.getElementById("timestamp").value = new Date().toLocaleString();
-
-    emailjs
-      .sendForm("service_j1zsr3a", "template_gd0zth7", this)
-      .then(function () {
-        alert("✅ Message sent successfully!");
-      })
-      .catch(function (error) {
-        alert("❌ Failed to send message:\n" + JSON.stringify(error));
-      });
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    fetch("https://script.google.com/macros/s/AKfycbwTKbGHFw25Zck-twNGkAlCc-UG_HErnixm5W4iyGjfZWG3g0v3nvROh2Zh0aR2DWnQ/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.text())
+    .then(text => {
+      document.getElementById("response-msg").innerText = "Message sent successfully!";
+      form.reset();
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      document.getElementById("response-msg").innerText = "There was a problem. Please try again.";
+    });
   });
